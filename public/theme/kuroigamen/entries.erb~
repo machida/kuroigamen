@@ -1,0 +1,50 @@
+<% @posts.each do |post| %>
+	
+	
+<div class="article section">
+<div class="header">
+<h2 class="title"><a href="<%= post.link %>"><%= post.title %></a></h2>
+
+<p class="pubdate"><span class="mounth"><%=  post.created_at.month %>月</span><span class="date"><%=post.created_at.day %>日</span><span class="year"><%= post.created_at.year %></span></p>
+
+
+
+</div>
+
+<div class="body">
+<dl class="author">
+<dt>この記事を書いた人</dt>
+<dd><%= post.user.name %></dd>
+</dl>
+<div class="content">
+<%= post.body %>
+<% unless post.tags.size.zero? %>
+<ul class="tags">
+<li class="tags"><%= post.tags_to_html %></li>
+</ul>
+<% end %>
+</div>
+</div>
+	
+	
+<div class="footer">
+<% if logged_in? %>
+<p><a href="<%= post.edit_link %>"><%= t.edit %></a></p>
+<% end %>    
+</div>
+</div>	
+
+	
+	
+
+<% end %>
+<div class="pager">
+  <ul>
+<% if @posts.pager.previous_page %>
+    <li class="previous"><a href="?page=<%= @posts.pager.previous_page %>"><%= t.newer %></a></li>
+<% end %>
+<% if @posts.pager.next_page %>
+    <li class="next"><a href="?page=<%= @posts.pager.next_page %>"><%= t.older %></a></li>
+<% end %>
+  </ul>
+</div>

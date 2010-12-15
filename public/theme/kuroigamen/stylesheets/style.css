@@ -1,0 +1,432 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* ===================================================================
+machidaのreset.css
+=================================================================== */
+html {
+	font-size: 12px;
+	background-image:url(../images/main_aside.gif);
+    letter-spacing: 0.1ex;
+}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+a:link {
+	color: #527bff;
+}
+a:visited {
+	color: #3060fe;
+}
+a:hover {
+	color: #ff5297;
+}
+a:active {
+	color: #ff5252;
+}
+
+/* ===================================================================
+machidaのclearfix
+=================================================================== */
+.clearfix:after,
+div:after,
+ul:after,
+dl:after,
+form:after,
+blockquote:after {
+content: ".";
+display: block;
+height: 0px;
+clear: both;
+visibility: hidden;
+}
+
+.clearfix,
+div,
+ul,
+dl,
+form,
+blockquote {
+  min-height: 1px;
+  display: block;  /* ブロックレベル要素に */
+}
+
+
+.image_link:link,
+.image_link:visited {
+	background-position:left top
+	}
+.image_link:hover,
+.image_link:active {
+	background-position:left bottom
+	}
+ 
+
+
+/* ===================================================================
+site-design
+=================================================================== */
+#header .header {
+	height:125px;
+	background-image: url(../images/header.gif);
+	padding-top: 15px;
+}
+#header .header .title {
+	width: 400px;
+	float: left;
+}
+
+#header .header .sub-title {
+	display: block;
+	text-align: right;
+	font-size: 16px;
+	line-height: 24px;
+	padding-right: 5px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, "ヒラギノ丸ゴ Pro W4", HiraMaruPro-W4, "ヒラギノ角ゴ Pro W3", HiraKakuPro-W3, Osaka, sans-serif;
+	font-weight: bold;
+	letter-spacing: 0em;
+}
+
+#header .header .title a {
+	height:60px;
+	background-image: url(../images/logo.png);
+	text-indent: -9999px;
+	display: block;
+}
+#header .header .nav {
+	width: 560px;
+	float: right;
+}
+#header .header .nav li {
+	display: inline;
+}
+#header .header .nav ul {
+	padding-left: 15px;
+	padding-top: 5px;
+}
+#header .header .nav li a {
+	display: block;
+	line-height: 45px;
+	font-weight: bold;
+	color: #FFF6E5;
+	text-align: center;
+	height: 45px;
+	width: 135px;
+	background-image: url(../images/header-nav-a.gif);
+	float: left;
+	font-size: 13px;
+	text-decoration: none;
+	text-shadow:#000 1px 1px 1px
+}
+#header .header .nav .description {
+	background-image: url(../images/header-description.gif);
+	height: 60px;
+	text-indent: -9999px;
+}
+.index #header .body {
+	background-image:url(../images/eye-catch.gif);
+	height: 280px;
+	clear: both;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+
+.index #header .body .cattle-mutilation {
+	width:320px;
+	height:275px;
+	background-image:url(../images/cattle-mutilation.png);
+	float: left;
+	text-indent: -9999px;
+}
+.index #header .body .summary {
+	width:626px;
+	height:262px;
+	background-image:url(../images/header-summary.png);
+	float: right;
+	margin-top: 12px;
+	color: #FFF6E5;
+}
+.index #header .body .summary h1 {
+	background-image:url(../images/index_summary_title.png);
+	display: block;
+	text-indent: -9999px;
+	background-repeat: no-repeat;
+	height: 40px;
+	margin-top: 15px;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+.index #header .body .summary p {
+	font-size: 16px;
+	line-height: 1.5;
+	padding-left: 25px;
+	background-image: url(../images/index_summary_p.png);
+	background-repeat: no-repeat;
+	background-position: right bottom;
+	display: block;
+	padding-right: 75px;
+	margin-right: 25px;
+	height: 180px;
+	padding-top: 10px;
+font-family: "Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,"ヒラギノ丸ゴ Pro W4",HiraMaruPro-W4,"ヒラギノ角ゴ Pro W3",HiraKakuPro-W3,Osaka,sans-serif;
+text-shadow:#033 1px 1px 1px;
+}
+
+#header .footer {
+	height:33px;
+	background-image: url(../images/bread-crumbs.gif);
+	padding-top: 7px;
+}
+#header .footer .inner {
+	background-image: url(../images/header-footer-inner.gif);
+	height: 26px;
+	width: 920px;
+	margin-right: auto;
+	margin-left: auto;
+	line-height: 26px;
+	padding-right: 20px;
+	padding-left: 20px;
+	color: #FFF6E5;
+	text-shadow:#000 1px 1px 1px;
+}
+
+#container {
+	background-image:url(../images/container.gif);
+	background-repeat: repeat-x;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.inner {
+	margin-left:auto;
+	width: 970px;
+	margin-right: auto;
+}
+
+#main {
+	width: 590px;
+	float: left;
+}
+
+#main .section .header {
+	width: 590px;
+	float: left;
+	background-image: url(../images/section-header.gif);
+	background-repeat: no-repeat;
+	padding-bottom: 5px;
+}
+
+#main .section .header .pubdate {
+	width: 86px;
+	float: left;
+	height: 70px;
+	display: block;
+	padding-left: 10px;
+	text-align: center;
+	padding-top: 15px;
+	font-weight: bold;
+	margin-bottom: 5px;
+}
+#main .section .header .pubdate span {
+	display: block;
+	line-height: 1;
+	text-shadow:#fff -1px -1px 1px;
+}
+#main .section .header .pubdate span.mounth {
+	line-height: 13px;
+	font-size: 13px;
+}
+#main .section .header .pubdate span.date {
+	line-height: 30px;
+	font-size: 24px;
+}
+#main .section .header .pubdate span.year {
+	line-height: 13px;
+	font-size: 13px;
+}
+#main .section .header .title {
+	width: 465px;
+	float: right;
+	display: block;
+	font-size: 28px;
+	line-height: 1.3;
+	padding-right: 10px;
+	padding-top: 10px;
+	color: #1eff00;
+	font-weight: bold;
+	text-shadow:#000 1px 1px 1px
+}
+#main .section .header .title a:link,
+#main .section .header .title a:visited
+ {
+	color: #1eff00;
+	text-decoration: none;
+}
+#main .section .header .title a:hover,
+#main .section .header .title a:active
+ {
+	color: #ff5297;
+}
+#main .section .body {
+	background-image: url(../images/section-body.gif);
+	clear: both;
+	color: #FFF6E5;
+	font-size: 14px;
+}
+#main .section .body .author {
+	background-image: url(../images/section-body-author.gif);
+	padding-top: 15px;
+	padding-right: 35px;
+	padding-left: 35px;
+	padding-bottom: 15px;
+}
+#main .section .body .author dt,
+#main .section .body .author dd {
+	display: inline;
+}
+#main .section .body .content {
+	background-image: url(../images/section-body-content.gif);
+	padding-top: 10px;
+	padding-right: 35px;
+	padding-left: 35px;
+	background-position: left top;
+}
+#main .section .body .content p {
+	line-height: 1.7;
+	margin-bottom: 1.7em;
+}
+#main .section .body .content h3 {
+	line-height: 1.3;
+	margin-bottom: 0.8em;
+	font-size: 24px;
+}
+#main .section .body .content .tags {
+	background-image: url(../images/body-tags.jpg);
+	padding-top: 55px;
+	height: 30px;
+	padding-bottom: 5px;
+	padding-right: 35px;
+	padding-left: 35px;
+	font-size: 12px;
+}
+#main .section .body .content .tags li {
+	line-height: 30px;
+	display: inline;
+}
+#main .section .footer {
+	background-image: url(../images/section-footer.gif);
+	color: #E9D2A3;
+	font-size: 14px;
+	background-position: left bottom;
+	padding-right: 35px;
+	padding-bottom: 30px;
+	padding-left: 35px;
+}
+
+#aside {
+	width:350px;
+	float:right;
+}
+
+#aside .section {
+	margin-bottom: 30px;
+}
+#aside .twitter {
+	margin-top: -5px;
+	margin-bottom: 30px;
+}
+
+#aside h2,
+#twtr-widget-1 h3 {
+	font-size:16px;
+	font-weight: bold;
+	display: block;
+	color:#9F7932;
+	background-image: url(../images/aside_h2.gif) !important;
+	height: 38px !important;
+	padding-bottom: 22px !important;
+	line-height: 38px !important;
+	padding-left: 15px !important;
+	color: #FFF6E5 !important;
+	text-shadow:#966 1px 1px 1px;
+}
+
+
+
+.twtr-doc,#twtr-widget-1 .twtr-doc, #twtr-widget-1 .twtr-hd a,  #twtr-widget-1 h4, #twtr-widget-1 .twtr-popular,.twtr-widget .twtr-tweet,#twtr-widget-1 .twtr-bd, #twtr-widget-1 .twtr-timeline i a, #twtr-widget-1 .twtr-bd p,#twtr-widget-1 .twtr-new-results,#twtr-widget-1 .twtr-results-inner,#twtr-widget-1 .twtr-timeline {
+	background-image:url(../images/main_aside.gif) !important;
+}
+.twtr-widget .twtr-tweet-wrap {
+padding:6px 0px !important;
+}
+.twtr-hd {
+padding:10px 0px !important;
+}
+#twtr-widget-1 h4 {
+	display:none !important;
+}
+#twtr-widget-1 h3 {
+	font-size:16px !important;
+	font-weight: bold !important;
+	display: block;
+	color: #FFF6E5 !important;
+}
+.twtr-img {
+	height:30px !important;
+	width:30px !important;
+	background-color: #FFF !important;
+	padding: 3px !important;
+}
+#twtr-widget-1 .twtr-tweet-text {
+margin-left:45px !important;
+}
+
+#footer {
+	clear:both;
+	background-color: #1E1B16;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-image: url(../images/footer.gif);
+	background-repeat: repeat-x;
+	background-position: left top;
+	color: #1eff00;
+	}
+#footer a {
+	font-weight: bold;
+	text-decoration: none;
+	}
+#footer a:link,
+#footer a:visited {
+	color: #1eff00;
+	}
+#footer a:hover,
+#footer a:active {
+	color: #ff5252;
+	}
