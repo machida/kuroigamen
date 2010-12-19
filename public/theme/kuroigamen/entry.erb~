@@ -1,21 +1,45 @@
 <div class="article section">
+<%# [条件分岐] 投稿のとき %>		
 <div class="header">
 <h2 class="title"><a href="<%= @entry.link %>"><%= @entry.title %></a></h2>
 <p class="pubdate"><span class="mounth"><%= @entry.created_at.month %>月</span><span class="day"><%= @entry.created_at.day %>日</span><span class="year"><%= @entry.created_at.year %></span></p>
 </div>
 
+<%# [条件分岐] それ以外 %>
+<% else %>
+<div class="header_page">
+<h2 class="title"><a href="<%= @entry.link %>"><%= @entry.title %></a></h2>
+</div>
+<% end %>
+
 <div class="body">
+<%# [条件分岐] ページのとき %>
+<% if @entry.class == Page %>
+<dl class="author">
+<dt>最終更新日</dt>
+<dd><%= l @entry.created_at %></dd>
+</dl>
+
+<%# [条件分岐] それ以外 %>
+<% else %>
 <dl class="author">
 <dt>この記事を書いた人</dt>
 <dd><%= @entry.user.name %> <img src="<%= gravatar_image_url(@entry.user.email) %>"/></dd>
 </dl>
+<% end %>
+
 <div class="content">
+	
+<%# [条件分岐] 投稿のとき %>	
+<% if @entry.class == Post %>
 <ul class="buttons">	
 <li><%= tweet_button %></li>
 <li class="hatena"><%= hatena_bookmark_button(@entry.title, "http://example.com/foo/bar/") %></li>
 <li><%= mixi_check %></li>
 <li><%= gree_social_feedback %></li>
 </ul>
+<% end %>
+
 
 
 <%= @entry.body %>
@@ -23,7 +47,8 @@
 <%= @entry.tags_to_html %>
 <% end %>
 
-
+<%# [条件分岐] 投稿のとき %>
+<% if @entry.class == Post %>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -42,10 +67,9 @@
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 <a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+<% end %>
 
-
-
-
+</div>
 
 </div>
 	

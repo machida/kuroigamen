@@ -14,7 +14,14 @@
 <div class="body">
 <dl class="author">
 <dt>この記事を書いた人</dt>
-<dd><%= post.user.name %> <img src="<%= gravatar_image_url(post.user.email) %>"/><</dd>
+<dd><%= post.user.name %> <img src="<%= gravatar_image_url(post.user.email) %>"/></dd>
+
+<%# [条件分岐] ページのとき %>
+<% if @entry.class == Page %>
+<dt>この記事の最終更新日</dt>
+<dd><%= post.user.name %> <img src="<%= gravatar_image_url(post.user.email) %>"/></dd>
+<% end %>
+
 </dl>
 <div class="content">
 <%= post.body %>

@@ -61,17 +61,26 @@ $("img").lazyload();
 </p>
 </div>
 
+<%# [条件分岐] 投稿のとき %>
 <% elsif @entry.class == Post %>
 <div class="title">
-<h1>blog</h1>
+<h1><%= @entry.category.slug %></h1>
+<p class="description"><%= @entry.category.description %></p>
 </div>
 
+<%# [条件分岐] ページのとき %>
 <% elsif @entry.class == Page %>
 <div class="title">
 <h1><%= @entry.slug %></h1>
 <p class="description">あああああああああああああ</p>
 </div>
 
+<%# [条件分岐] カテゴリーのとき %>
+<% elsif entries? %>
+<div class="title">
+<h1><%= @category.slug %></h1>
+<p class="description"><%= @category.description %></p>
+</div>
 
 <%# [条件分岐] それ以外 %>
 <% else %>

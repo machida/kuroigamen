@@ -316,6 +316,11 @@ text-shadow:#033 1px 1px 1px;
 	background-repeat: no-repeat;
 	padding-bottom: 5px;
 }
+#main .section .header_page {
+	background-image: url(../images/section-header_page.gif);
+	background-repeat: no-repeat;
+	padding-bottom: 5px;
+}
 
 #main .section .header .pubdate {
 	width: 86px;
@@ -356,6 +361,22 @@ text-shadow:#033 1px 1px 1px;
 	color: #1eff00;
 	font-weight: bold;
 	text-shadow:#000 1px 1px 1px
+}
+#main .section .header_page .title {
+	display: block;
+	font-size: 26px;
+	line-height: 1.3;
+	padding-right: 25px;
+	padding-top: 10px;
+	color: #1eff00;
+	font-weight: bold;
+	text-shadow:#000 1px 1px 1px;
+	padding-left: 25px;
+}
+#main .section .header_page .title a
+ {
+	color: #1eff00;
+	text-decoration: none;
 }
 #main .section .header .title a:link,
 #main .section .header .title a:visited
