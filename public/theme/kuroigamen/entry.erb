@@ -1,22 +1,52 @@
 <div class="article section">
 <div class="header">
 <h2 class="title"><a href="<%= @entry.link %>"><%= @entry.title %></a></h2>
-<p class="pubdate"><span class="mounth"><%= @entry.created_at.month %>月</span><span class="date"><%= @entry.created_at.day %>日</span><span class="year"><%= @entry.created_at.year %></span></p>
+<p class="pubdate"><span class="mounth"><%= @entry.created_at.month %>月</span><span class="day"><%= @entry.created_at.day %>日</span><span class="year"><%= @entry.created_at.year %></span></p>
 </div>
 
 <div class="body">
 <dl class="author">
 <dt>この記事を書いた人</dt>
-<dd><%= @entry.user.name %></dd>
+<dd><%= @entry.user.name %> <img src="<%= gravatar_image_url(@entry.user.email) %>"/></dd>
 </dl>
 <div class="content">
+<ul class="buttons">	
+<li><%= tweet_button %></li>
+<li class="hatena"><%= hatena_bookmark_button(@entry.title, "http://example.com/foo/bar/") %></li>
+<li><%= mixi_check %></li>
+<li><%= gree_social_feedback %></li>
+</ul>
+
+
 <%= @entry.body %>
 <% unless @entry.tags.size.zero? %>
-<ul class="tags">
-<li class="tags"><%= @entry.tags_to_html %></li>
-</ul>
+<%= @entry.tags_to_html %>
 <% end %>
-</div>
+
+
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'example'; // required: replace example with your forum shortname
+
+    // The following are highly recommended additional parameters. Remove the slashes in front to use.
+    // var disqus_identifier = 'unique_dynamic_id_1234';
+    // var disqus_url = 'http://example.com/permalink-to-page.html';
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+
+
+
 </div>
 	
 	

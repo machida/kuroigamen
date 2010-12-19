@@ -13,7 +13,8 @@
     </ul>
   </div>
   <div class="body">
-    <%= @entry.body %>
+<%= tweet_button("http://example.com/foo/bar/") %>      
+<%= @entry.body %>
   </div>
   <div class="footer">
     <% if logged_in? %>

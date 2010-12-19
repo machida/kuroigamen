@@ -5,7 +5,7 @@
 <div class="header">
 <h2 class="title"><a href="<%= post.link %>"><%= post.title %></a></h2>
 
-<p class="pubdate"><span class="mounth"><%=  post.created_at.month %>月</span><span class="date"><%=post.created_at.day %>日</span><span class="year"><%= post.created_at.year %></span></p>
+<p class="pubdate"><span class="mounth"><%=  post.created_at.month %>月</span><span class="day"><%=post.created_at.day %>日</span><span class="year"><%= post.created_at.year %></span></p>
 
 
 
@@ -14,14 +14,12 @@
 <div class="body">
 <dl class="author">
 <dt>この記事を書いた人</dt>
-<dd><%= post.user.name %></dd>
+<dd><%= post.user.name %> <img src="<%= gravatar_image_url(post.user.email) %>"/><</dd>
 </dl>
 <div class="content">
 <%= post.body %>
 <% unless post.tags.size.zero? %>
-<ul class="tags">
-<li class="tags"><%= post.tags_to_html %></li>
-</ul>
+<%= post.tags_to_html %>
 <% end %>
 </div>
 </div>
