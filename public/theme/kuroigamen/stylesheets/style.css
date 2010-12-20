@@ -244,20 +244,19 @@ font-family: "Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,"ヒラギノ
 text-shadow:#033 1px 1px 1px;
 }
 .index #header .body .summary span.button {
-	text-align: right;
 	display: block;
+	padding-left: 350px;
 }
 .index #header .body .summary span.button a {
-	font-size: 16px;
+	font-size: 12px;
 	background-image: url(../images/header-summary_button.png);
-	height: 48px;
-	font-family: "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, "ヒラギノ丸ゴ Pro W4", HiraMaruPro-W4, "ヒラギノ角ゴ Pro W3", HiraKakuPro-W3, Osaka, sans-serif;
+	height: 30px;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Arial, Helvetica, "ヒラギノ角ゴ Pro W3", HiraKakuPro-W3, Osaka, sans-serif;
 	margin-top: 10px;
-	line-height: 48px;
+	line-height: 30px;
 	text-decoration: none;
-	text-align: center;
-	width: 230px;
-	padding-bottom: 2px;
+	width: 108px;
+	padding-left: 37px;
 }
 .index #header .body .summary span.button a:link,
 .index #header .body .summary span.button a:visited
@@ -265,10 +264,11 @@ text-shadow:#033 1px 1px 1px;
 	text-shadow:#033 1px 1px 1px;
 	color: #FFF6E5;
 }
-.button a:hover,
-.button a:active
+.index #header .body .summary span.button a:hover,
+.index #header .body .summary span.button a:active
  {
-	text-shadow:#fff -1px -1px 1px;
+	text-shadow:#f4f62f 0px 0px 3px;
+	color: #ff5297;
 }
 
 
@@ -320,6 +320,9 @@ text-shadow:#033 1px 1px 1px;
 	background-image: url(../images/section-header_page.gif);
 	background-repeat: no-repeat;
 	padding-bottom: 5px;
+	padding-top: 15px;
+	padding-right: 25px;
+	padding-left: 25px;
 }
 
 #main .section .header .pubdate {
@@ -366,12 +369,9 @@ text-shadow:#033 1px 1px 1px;
 	display: block;
 	font-size: 26px;
 	line-height: 1.3;
-	padding-right: 25px;
-	padding-top: 10px;
 	color: #1eff00;
 	font-weight: bold;
 	text-shadow:#000 1px 1px 1px;
-	padding-left: 25px;
 }
 #main .section .header_page .title a
  {
@@ -389,6 +389,35 @@ text-shadow:#033 1px 1px 1px;
  {
 	color: #ff5297;
 }
+
+#main .section .header_page .author {
+	padding-top: 5px;
+	padding-bottom: 10px;
+	height:20px;
+	color: #FFF6E5;
+	display: block;
+	text-align: right;
+}
+#main .section .header_page .author dt:after {
+	height:20px;
+	content:"\0020\003a";
+}
+#main .section .header_page .author dt,
+#main .section .header_page .author dd {
+	display: inline;
+	font-size: 12px;
+	line-height: 20px;
+}
+#main .section .header_page .author img {
+	height: 12px;
+	width: 12px;
+}
+
+
+
+
+
+
 #main .section .body {
 	background-image: url(../images/section-body.gif);
 	clear: both;
@@ -599,6 +628,20 @@ margin-left:45px !important;
 	font-size: 13px;
 	line-height: 1.4;
 	font-weight: bold;
+}
+#aside .new_entries.section a:link .title,
+#aside .new_entries.section a:visited .title {
+	color:#49320b;
+	text-shadow:#f2e2c3 1px 1px 0px;
+}
+#aside .new_entries.section a:hover .title,
+#aside .new_entries.section a:active .title {
+	color:#F36;
+	text-shadow:none;
+}
+#aside .new_entries.section a .date {
+	color:#49320b;
+	text-shadow:#f2e2c3 1px 1px 0px;
 }
 #aside .new_entries.section .auther {
 	display: block;

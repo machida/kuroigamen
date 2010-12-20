@@ -24,6 +24,19 @@ $(function() {
 $("img").lazyload();
 });
 </script>
+<script type="text/javascript" src="http://s.hatena.ne.jp/js/HatenaStar.js"></script>
+<script type="text/javascript">
+Hatena.Star.SiteConfig = {
+  entryNodes: {
+    'div.section': {
+      uri: 'h2 a',
+      title: 'h2',
+      container: 'h2'
+    }
+  }
+};
+</script>
+
 <%= header %>
 </head>
   
@@ -57,22 +70,22 @@ $("img").lazyload();
 <div class="summary">
 <h1>黒い画面</h1>
 <p>黒い画面（ターミナル）を操り、オープンソースに勝手にデザインを入れ、それを作者に送り付ける「デザインテロ活動」を行うデザイナー集団です。主な活動は、プログラマーを招きより黒い画面への理解を深める勉強会を行うことと、送りつけたデザインテロの成果の発表会を行ないます。
-<span class="button"><a href="">もっとくわしく！</a></span>
+<span class="button"><a href="">もっとくわしく</a></span>
 </p>
 </div>
 
 <%# [条件分岐] 投稿のとき %>
 <% elsif @entry.class == Post %>
 <div class="title">
-<h1><%= @post.category.slug %></h1>
-<p class="description"><%= @post.category.description %></p>
+<h1><%= @entry.category.slug %></h1>
+<p class="description"><%= @entry.category.description %></p>
 </div>
 
 <%# [条件分岐] ページのとき %>
 <% elsif @entry.class == Page %>
 <div class="title">
 <h1><%= @entry.slug %></h1>
-<p class="description">あああああああああああああ</p>
+<p class="description">&nbsp;</p>
 </div>
 
 <%# [条件分岐] カテゴリーのとき %>

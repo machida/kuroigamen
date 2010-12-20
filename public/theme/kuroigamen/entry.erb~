@@ -1,5 +1,6 @@
 <div class="article section">
 <%# [条件分岐] 投稿のとき %>		
+<% if @entry.class == Post %>
 <div class="header">
 <h2 class="title"><a href="<%= @entry.link %>"><%= @entry.title %></a></h2>
 <p class="pubdate"><span class="mounth"><%= @entry.created_at.month %>月</span><span class="day"><%= @entry.created_at.day %>日</span><span class="year"><%= @entry.created_at.year %></span></p>
@@ -9,6 +10,10 @@
 <% else %>
 <div class="header_page">
 <h2 class="title"><a href="<%= @entry.link %>"><%= @entry.title %></a></h2>
+<dl class="author">
+<dt>この記事を書いた人</dt>
+<dd><%= @entry.user.name %> <img src="<%= gravatar_image_url(@entry.user.email) %>"/></dd>
+</dl>
 </div>
 <% end %>
 

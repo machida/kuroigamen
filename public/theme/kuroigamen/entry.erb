@@ -10,6 +10,10 @@
 <% else %>
 <div class="header_page">
 <h2 class="title"><a href="<%= @entry.link %>"><%= @entry.title %></a></h2>
+<dl class="author">
+<dt>最終編集者</dt>
+<dd><%= @entry.user.name %> <img src="<%= gravatar_image_url(@entry.user.email) %>"/></dd>
+</dl>
 </div>
 <% end %>
 
