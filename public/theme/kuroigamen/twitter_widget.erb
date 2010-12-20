@@ -1,0 +1,35 @@
+<div class="twitter">
+<script src="http://widgets.twimg.com/j/2/widget.js"></script>
+<script>
+new TWTR.Widget({
+  version: 2,
+  type: 'search',
+  search: '#kuroigamen',
+  interval: 6000,
+  title: '黒い画面最新情報',
+  subject: 'kuroigamen',
+  width: 350,
+  height: 250,
+  theme: {
+    shell: {
+      background: 'transparent'    },
+    tweets: {
+      background: 'transparent',
+      color: '#444444',
+      links: '#1985b5'
+    }
+  },
+  features: {
+    scrollbar: false,
+    loop: true,
+    live: true,
+    hashtags: true,
+    timestamp: true,
+    avatars: true,
+    toptweets: true,
+    behavior: 'default'
+  }
+}).render().start();
+</script>
+</div>	     
+

@@ -1,0 +1,17 @@
+<div class="new_entries section">
+<h2>最新のブログ記事</h2>
+<ul>
+<% Post.recent(5).each do |post| %>
+<li class="clearfix">
+<a href="<%= post.link %>" class="clearfix"><span class="title"><%= post.title %><span class="date"><%= l post.created_at %></span></span>
+<span class="auther"><img src="<%= gravatar_image_url(post.user.email) %>"/><br /><%= post.user.name %></span>
+<span class="date"></span></a>
+</li>
+<% end %>
+</ul>
+</div>
+
+<div class="achievement section">
+<h2>最新の実績</h2>
+</div>
+
