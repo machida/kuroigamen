@@ -15,7 +15,7 @@
     <link rel="shortcut icon" href="<%= @theme.path %>/favicon.ico" />
     <link rel="alternate" href="/index.atom" type="application/atom+xml" />
     <link rel="stylesheet" href="<%= @theme.path %>/style.css" type="text/css" />
-    <link href="http://fonts.googleapis.com/css?family=PT+Sans+Caption:regular,bold" rel="stylesheet" type="text/css" >
+    <link href="http://fonts.googleapis.com/css?family=PT+Sans+Caption:regular,bold" rel="stylesheet" type="text/css" />
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="<%= @theme.path %>/javascripts/jquery.lazyload.js"></script>
@@ -39,8 +39,13 @@ Hatena.Star.SiteConfig = {
 
 <%= header %>
 </head>
-  
+	
+<% if entry? %>
+<body class="<%= @theme_types.join(' ') %> <% @entry.slug %>">
+<% else %>
 <body class="<%= @theme_types.join(' ') %>">
+<% end %>
+
 <div id="header">
 <div class="header">
 <div class="inner">
@@ -70,7 +75,7 @@ Hatena.Star.SiteConfig = {
 <div class="summary">
 <h1>黒い画面</h1>
 <p>黒い画面（ターミナル）を操り、オープンソースに勝手にデザインを入れ、それを作者に送り付ける「デザインテロ活動」を行うデザイナー集団です。主な活動は、プログラマーを招きより黒い画面への理解を深める勉強会を行うことと、送りつけたデザインテロの成果の発表会を行ないます。
-<span class="button"><a href="">もっとくわしく</a></span>
+<span class="button"><a href="/about">もっとくわしく</a></span>
 </p>
 </div>
 
@@ -110,8 +115,7 @@ Hatena.Star.SiteConfig = {
 
 <div class="footer">
 <div class="inner">
-<p><div class="bread_crumbs wide"><%= bread_crumb %></div>
-</p>
+<div class="bread_crumbs wide"><%= bread_crumb %></div>
 </div>
 </div>
 </div>
@@ -125,62 +129,25 @@ Hatena.Star.SiteConfig = {
 <%= yield %>
 </div>
 
-<div id="aside">
+
 <% if index? %>
-<div class="twitter">
-<script src="http://widgets.twimg.com/j/2/widget.js"></script>
-<script>
-new TWTR.Widget({
-  version: 2,
-  type: 'search',
-  search: '#kuroigamen',
-  interval: 6000,
-  title: '黒い画面最新情報',
-  subject: 'kuroigamen',
-  width: 350,
-  height: 250,
-  theme: {
-    shell: {
-      background: 'transparent'    },
-    tweets: {
-      background: 'transparent',
-      color: '#444444',
-      links: '#1985b5'
-    }
-  },
-  features: {
-    scrollbar: false,
-    loop: true,
-    live: true,
-    hashtags: true,
-    timestamp: true,
-    avatars: true,
-    toptweets: true,
-    behavior: 'default'
-  }
-}).render().start();
-</script>
-</div>	     
-<% end %>
-
-<div class="new_entries section">
-<h2>最新のブログ記事</h2>
-<ul>
-<% Post.recent(5).each do |post| %>
-<li class="clearfix">
-<a href="<%= post.link %>" class="clearfix"><span class="title"><%= post.title %><span class="date"><%= l post.created_at %></span></span>
-<span class="auther"><img src="<%= gravatar_image_url(post.user.email) %>"/><br /><%= post.user.name %></span>
-<span class="date"></span></a>
-</li>
-<% end %>
-</ul>
+<div id="aside">
+<%= partial :twitter_widget %>
+<%= partial :aside_contents %>
 </div>
 
-<div class="achievement section">
-<h2>最新の実績</h2>
+<%# [条件分岐] 一覧のとき %>
+<% elsif entries? %>
+<div id="aside">	
+<%= partial :aside_contents %>
 </div>
-	      
+<%# [条件分岐] ページのとき %>
+<% elsif @entry.slug == 'about' %>
+<div id="aside">
+<%= partial :aside_contents %>
 </div>
+<% end %>
+
 </div>
 </div>
 <div id="footer">
@@ -190,5 +157,17 @@ new TWTR.Widget({
 </div>
 </div>
 <%= footer %>
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'example'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
 </body>
 </html>
