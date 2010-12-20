@@ -41,7 +41,7 @@ Hatena.Star.SiteConfig = {
 </head>
 	
 <% if entry? %>
-<body class="<%= @theme_types.join(' ') %> <% @entry.slug %>">
+<body class="<%= @theme_types.join(' ') %> <%= @entry.slug %>">
 <% else %>
 <body class="<%= @theme_types.join(' ') %>">
 <% end %>
