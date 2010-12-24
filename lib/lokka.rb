@@ -49,7 +49,13 @@ module Lokka
       self
     end
 
-    def setup
+    def upgrade
+      puts 'Upgrading Database...'
+      @@models.each {|m| m.auto_upgrade! }
+      self
+    end
+
+    def insert_seeds
       puts 'Initializing Database...'
       User.create(
         :name => 'test',
