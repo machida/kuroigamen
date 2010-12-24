@@ -69,7 +69,7 @@ a:active {
  {
 	background-position: left bottom;
 }
-
+a { overflow: hidden }
 
 /* ===================================================================
 machidaのclearfix
@@ -526,6 +526,10 @@ site-design
 	padding-left: 35px;
 }
 
+#main .section .gist {
+	margin-bottom: 2em;
+}
+
 #aside {
 	width:350px;
 	float:right;
@@ -539,7 +543,37 @@ site-design
 	margin-bottom: 30px;
 }
 
-#aside h2,
+#aside h2 {
+	font-size:16px;
+	font-weight: bold;
+	display: block;
+	color:#9F7932;
+	background-image: url(../images/aside_h2.gif) ;
+	height: 38px ;
+	padding-bottom: 22px ;
+	line-height: 38px ;
+	padding-left: 15px ;
+	color: #FFF6E5 ;
+	text-shadow:#966 1px 1px 1px;
+}
+#aside .ad {
+	margin-bottom: 20px;
+}
+#aside .ad h2 {
+	font-size:12px;
+	font-weight: bold;
+	display: block;
+	color:#9F7932;
+	background-image: url(../images/aside_ad_h2.gif);
+	height: 33px;
+	padding-bottom: 2px;
+	line-height: 33px;
+	padding-left: 0px;
+	color: #fff;
+	text-shadow:#000 1px 1px 1px;
+	text-align: center;
+}
+
 #twtr-widget-1 h3 {
 	font-size:16px;
 	font-weight: bold;
@@ -553,7 +587,6 @@ site-design
 	color: #FFF6E5 !important;
 	text-shadow:#966 1px 1px 1px;
 }
-
 
 
 .twtr-doc,#twtr-widget-1 .twtr-doc, #twtr-widget-1 .twtr-hd a,  #twtr-widget-1 h4, #twtr-widget-1 .twtr-popular,.twtr-widget .twtr-tweet,#twtr-widget-1 .twtr-bd, #twtr-widget-1 .twtr-timeline i a, #twtr-widget-1 .twtr-bd p,#twtr-widget-1 .twtr-new-results,#twtr-widget-1 .twtr-results-inner,#twtr-widget-1 .twtr-timeline {
