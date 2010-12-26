@@ -7,7 +7,8 @@ machidaのreset.css
 html {
 	font-size: 12px;
 	background-image:url(../images/main_aside.gif);
-    letter-spacing: 0.1ex;
+	letter-spacing: 0.1ex;
+	line-height: 1;
 }
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
 	margin:0;
@@ -639,6 +640,17 @@ margin-left:45px !important;
 #footer a:active {
 	color: #ff5252;
 	}
+#footer .poweredby {
+	color:#666;
+	text-align: right;
+	display: block;
+	text-shadow:#000 1px 1px 1px;
+}
+#footer .poweredby a {
+	color:#666}
+
+
+
 .bread_crumbs li {
 	display:inline;
 	}
@@ -736,11 +748,14 @@ margin-left:45px !important;
 	color: #1eff00;
 	font-weight: bold;
 	text-shadow:#000 1px 1px 1px;
+	float: left;
+	width: 600px;
 }
 .works #main .section .header_page .title a
  {
-	color: #1eff00;
+	color: #302D24;
 	text-decoration: none;
+	text-shadow:#fff -1px -1px 1px;
 }
 .works #main .section .header .title a:link,
 .works #main .section .header .title a:visited
@@ -758,9 +773,10 @@ margin-left:45px !important;
 	padding-top: 5px;
 	padding-bottom: 10px;
 	height:20px;
-	color: #FFF6E5;
+	color: #302D24;
 	display: block;
 	text-align: left;
+	float: right;
 }
 .works #main .section .header_page .author dt:after {
 	height:20px;
@@ -780,13 +796,14 @@ margin-left:45px !important;
 .works #main .section .body {
 	background-image: none;
 	clear: both;
-	color: #FFF6E5;
+	color: #302D24;
 	font-size: 14px;
 }
 .works #main .section .body .author {
 	background-image: none;
 	height:20px;
 	padding: 0px;
+	clear: both;
 }
 .works #main .section .body .author dt:after {
 	height:20px;
@@ -827,3 +844,46 @@ margin-left:45px !important;
 	margin-right: 10px;
 	margin-left: 10px;
 	}
+.works #main li.work {
+	width:310px;
+	float: left;
+	margin-right: 10px;
+	margin-left: 10px;
+	margin-bottom: 30px;
+	display: block;
+	}
+.works #main .section .body .content h3 {
+	margin-bottom:5px;
+}
+.works #main .section .body .content h3 a:link img,
+.works #main .section .body .content h3 a:visited img {
+	border: 5px solid #FFF6E5;
+}
+.works #main .section .body .content h3 a:hover img,
+.works #main .section .body .content h3 a:active img {
+	border: 5px solid #F33;
+}
+.works #main .section .body .content p.name {
+	display: block;
+	font-weight: bold;
+	margin-bottom: 0px;
+	font-size: 16px;
+}
+.works #main .section .body .content p.name a {
+	text-decoration: none;
+}
+.works #main .section .body .content p.name a:link,
+.works #main .section .body .content p.name a:visited {
+	color: #302D24;
+}
+.works #main .section .body .content p.name a:hover,
+.works #main .section .body .content p.name a:active {
+	color: #ff5297;
+}
+.works #main .section .body .content dl.author {
+	font-size: 12px;
+}
+.works #main .section .body .content dl.author dt,
+.works #main .section .body .content dl.author dd {
+	display: inline;
+}
