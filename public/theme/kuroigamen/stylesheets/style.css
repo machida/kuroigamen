@@ -580,11 +580,11 @@ site-design
 	list-style-position: outside;
 }
 #main .section .body .content ul {
-	list-style-type: none;
-	padding-left: 0em;
+	list-style-type: disc;
 }
 .works #main .section .body .content ul {
-	list-style-type: disc;
+	list-style-type: none;
+	padding-left: 0em;
 }
 #main .section .body .content ol {
 	list-style-type: decimal;
