@@ -468,6 +468,78 @@ site-design
 	padding-left: 35px;
 	background-position: left top;
 }
+
+#main .section .body .content blockquote:before {
+	content:"\0022";
+	font-size: 96px;
+	font-weight: bold;
+	line-height: 20px;
+	display: block;
+	margin-top: 8px;
+	margin-right: 0px;
+	margin-left: 0px;
+	text-align: right;
+	font-family:"Times New Roman";
+	font-style:italic;
+	padding-right: 10px;
+	padding-left: 10px;
+	color: #353129;
+	margin-bottom: -25px;
+	}
+#main .section .body .content blockquote {
+	line-height: 1.7;
+	margin-bottom: 1.8em;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	padding-top: 17px;
+	padding-right: 20px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+	background-color: #2C2820;
+	color:#fff;
+	box-shadow: inset 2px 2px 2px #1e1d19;
+	-webkit-box-shadow: inset 2px 2px 2px #1e1d19;
+	-moz-box-shadow: inset 2px 2px 2px #1e1d19;
+	}
+#main .section .body .content .attention {
+	font-size:10px;
+	font-weight: bold;
+	color: #0C6;
+	}
+#main .section .body .content p.image {
+	text-align: center;
+	display: block;
+}
+#main .section .body .content p.image img {
+	margin-bottom: 1em;
+}
+#main .section .body .content p.image .description {
+	text-align: center;
+	display: block;
+	padding-bottom: 10px;
+	line-height: 1.4;
+	font-size: 12px;
+}
+#main .section .body .content .amazon {
+	text-align: center;
+	display: block;
+	background-color: #2C2820;
+	margin-right: 80px;
+	margin-left: 80px;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	box-shadow: inset 2px 2px 2px #1e1d19;
+	-webkit-box-shadow: inset 2px 2px 2px #1e1d19;
+	-moz-box-shadow: inset 2px 2px 2px #1e1d19;
+	margin-top: 4em;
+	background-image: url(../images/amazon.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
 #main .section .body .content .buttons {
 	background-color: #2B2822;
 	margin-top: -15px;
@@ -498,6 +570,23 @@ site-design
 #main .section .body .content p {
 	line-height: 1.7;
 	margin-bottom: 1.7em;
+}
+#main .section .body .content ul,
+#main .section .body .content ol {
+	line-height: 1.7;
+	margin-bottom: 1.4em;
+	padding-left: 2em;
+	list-style-position: outside;
+}
+#main .section .body .content ul {
+	list-style-type: disc;
+}
+#main .section .body .content ol {
+	list-style-type: decimal;
+}
+#main .section .body .content li {
+	line-height: 1.4;
+	margin-bottom: 1.2em;
 }
 #main .section .body .content h3 {
 	line-height: 1.3;
