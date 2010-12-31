@@ -147,6 +147,12 @@ Hatena.Star.SiteConfig = {
 <%= partial :aside_contents %>
 </div>
 
+<%# [条件分岐] ページスラッグ「works」のとき %>
+<% elsif @entry.slug == 'works' %>
+<div id="aside">
+<%= partial :aside_contents %>
+</div>
+
 <%# [条件分岐] 投稿のとき %>
 <% elsif @entry.class == Post %>
 <div id="aside">
