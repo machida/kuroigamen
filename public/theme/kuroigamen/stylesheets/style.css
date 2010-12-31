@@ -651,6 +651,32 @@ site-design
 	color: #FFF6E5 ;
 	text-shadow:#966 1px 1px 1px;
 }
+#aside div.works ul {
+	margin-top: 8px;
+}
+#aside div.works li {
+	display: block;
+	margin-bottom: 8px;
+}
+#aside div.works li a {
+	display: block;
+	border-top-width: 5px;
+	border-right-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
+#aside div.works li a:link,
+#aside div.works li a:visited {
+    border: 5px solid #FFF6E5;
+	}
+#aside div.works li a:hover,
+#aside div.works li a:active {
+    border: 5px solid #B49247;
+	}
 #aside .ad {
 	margin-bottom: 20px;
 }
