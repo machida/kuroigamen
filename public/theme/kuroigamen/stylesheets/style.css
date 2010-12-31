@@ -13,6 +13,7 @@ html {
 body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
 	margin:0;
 	padding:0;
+	font-family: 'Hiragino Kaku Gothic Pro','ヒラギノ角ゴ Pro W3','Meiryo','メイリオ','ＭＳ Ｐゴシック','ＭＳ ゴシック',Osaka,Osaka-等幅,sans-serif;
 }
 table {
 	border-collapse:collapse;
@@ -475,7 +476,7 @@ site-design
 	font-weight: bold;
 	line-height: 20px;
 	display: block;
-	margin-top: 8px;
+	margin-top: 15px;
 	margin-right: 0px;
 	margin-left: 0px;
 	text-align: right;
@@ -484,7 +485,7 @@ site-design
 	padding-right: 10px;
 	padding-left: 10px;
 	color: #353129;
-	margin-bottom: -25px;
+	margin-bottom: -40px;
 	}
 #main .section .body .content blockquote {
 	line-height: 1.7;
