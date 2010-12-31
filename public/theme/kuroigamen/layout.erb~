@@ -147,8 +147,8 @@ Hatena.Star.SiteConfig = {
 <%= partial :aside_contents %>
 </div>
 
-<%# [条件分岐] ページスラッグ「works」のとき %>
-<% elsif @entry.slug == 'works' %>
+<%# [条件分岐] ページスラッグ「members」のとき %>
+<% elsif @entry.slug == 'members' %>
 <div id="aside">
 <%= partial :aside_contents %>
 </div>
