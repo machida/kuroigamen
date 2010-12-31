@@ -150,6 +150,7 @@ Hatena.Star.SiteConfig = {
 <%# [条件分岐] 投稿のとき %>
 <% elsif @entry.class == Post %>
 <div id="aside">
+<%= partial :aside_ad %>
 <%= partial :aside_contents %>
 </div>
 
