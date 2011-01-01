@@ -577,8 +577,6 @@ site-design
 }
 #main .section .body .content img {
 	max-width:500px;
-	line-height: 1.7;
-	margin-bottom: 1.7em;
 }
 #main .section .body .content ul,
 #main .section .body .content ol {
