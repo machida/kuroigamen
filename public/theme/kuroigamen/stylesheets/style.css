@@ -638,6 +638,9 @@ site-design
 	float: left;
 	margin-bottom: 0px;
 	}
+#main .section .body .content .work h3 {
+	background-image: none;
+	}
 
 #main .section .body .content .tags {
 	background-image: url(../images/body-tags.jpg);
