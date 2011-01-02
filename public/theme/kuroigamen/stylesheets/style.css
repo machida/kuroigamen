@@ -22,7 +22,7 @@ table {
 fieldset,img { 
 	border:0;
 }
-address,caption,cite,code,dfn,em,strong,th,var {
+address,caption,cite,code,dfn,em,th,var {
 	font-style:normal;
 	font-weight:normal;
 }
@@ -577,6 +577,10 @@ site-design
 }
 #main .section .body .content img {
 	max-width:500px;
+	max-height:420px;
+}
+#main .section .body .content li img {
+	max-width:480px;
 }
 #main .section .body .content ul,
 #main .section .body .content ol {
