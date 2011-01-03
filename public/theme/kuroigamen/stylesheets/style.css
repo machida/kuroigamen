@@ -582,6 +582,9 @@ site-design
 	line-height: 1.7;
 	margin-bottom: 1.7em;
 }
+#main .section .body .content .delete {
+	text-decoration: line-through;
+}
 #main .section .body .content pre {
 	line-height: 1.5;
 	margin-bottom: 1.7em;
@@ -594,7 +597,7 @@ site-design
 }
 #main .section .body .content img {
 	max-width:500px;
-	max-height:420px;
+	max-height:500px;
 }
 #main .section .body .content li img {
 	max-width:480px;
