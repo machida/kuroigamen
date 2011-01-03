@@ -45,7 +45,7 @@ a:link {
 	color: #7e96ff;
 }
 a:visited {
-	color: #3060fe;
+	color: #7e96ff;
 }
 a:hover {
 	color: #ff5297;
@@ -506,6 +506,13 @@ site-design
 	-webkit-box-shadow: inset 2px 2px 2px #1e1d19;
 	-moz-box-shadow: inset 2px 2px 2px #1e1d19;
 	}
+#main .section .body .content blockquote .original {
+	line-height: 1.7;
+	margin-bottom: 1.8em;
+	display: block;
+	font-size: 12px;
+	text-align: right;
+	}
 #main .section .body .content .attention {
 	font-size:10px;
 	font-weight: bold;
@@ -575,12 +582,25 @@ site-design
 	line-height: 1.7;
 	margin-bottom: 1.7em;
 }
+#main .section .body .content pre {
+	line-height: 1.5;
+	margin-bottom: 1.7em;
+	font-size: 13px;
+	display: block;
+	padding: 5px;
+	color: #0C3;
+	background-color: #000;
+	overflow: auto;
+}
 #main .section .body .content img {
 	max-width:500px;
 	max-height:420px;
 }
 #main .section .body .content li img {
 	max-width:480px;
+}
+#main .section .body .content blockquote img {
+	max-width:460px;
 }
 #main .section .body .content ul,
 #main .section .body .content ol {
@@ -601,17 +621,29 @@ site-design
 }
 #main .section .body .content li {
 	line-height: 1.4;
-	margin-bottom: 1.2em;
+	margin-bottom: 1em;
 }
 #main .section .body .content h3 {
-	line-height: 1.3;
+	line-height: 1.4;
 	margin-bottom: 0.8em;
-	font-size: 24px;
+	font-size: 20px;
 	background-image: url(../images/section_under_border.gif);
 	background-repeat: repeat-x;
 	background-position: left bottom;
 	display: block;
 	padding-bottom: 3px;
+	padding-top: 10px;
+}
+#main .section .body .content h4:before {
+	content:"\0025a0";
+	margin-right:0.2em;
+}
+#main .section .body .content h4 {
+	line-height: 1.4;
+	margin-bottom: 1em;
+	font-size: 16px;
+	display: block;
+	text-shadow: 1px 1px 1px #2C2820;
 }
 #main .section .body .content .point {
 	background-color:#4d493e;
