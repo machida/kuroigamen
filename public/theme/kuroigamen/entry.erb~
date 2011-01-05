@@ -11,7 +11,7 @@
 <div class="header_page">
 <h2 class="title"><a href="<%= @entry.link %>"><%= @entry.title %></a></h2>
 <dl class="author">
-<dt>この記事を書いた人</dt>
+<dt>最終編集者</dt>
 <dd><%= @entry.user.name %> <img src="<%= gravatar_image_url(@entry.user.email) %>"/></dd>
 </dl>
 </div>
@@ -39,7 +39,7 @@
 <% if @entry.class == Post %>
 <ul class="buttons">	
 <li><%= tweet_button %></li>
-<li class="hatena"><%= hatena_bookmark_button(@entry.title, "http://example.com/foo/bar/") %></li>
+<%# <li class="hatena"><%= hatena_bookmark_button(@entry.title) %></li> %>	
 <li><%= mixi_check %></li>
 <li><%= gree_social_feedback %></li>
 </ul>
