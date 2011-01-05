@@ -322,7 +322,6 @@ site-design
 }
 #main .section .header {
 	width: 590px;
-	float: left;
 	background-image: url(../images/section-header.gif);
 	background-repeat: no-repeat;
 	padding-bottom: 5px;
@@ -442,6 +441,7 @@ site-design
 	clear: both;
 	color: #FFF6E5;
 	font-size: 14px;
+	margin-top: -1px;
 }
 #main .section .body .author {
 	background-image: url(../images/section-body-author.gif);
@@ -579,6 +579,45 @@ site-design
 	display:inline
 }
 #main .section .body .content p {
+	line-height: 1.7;
+	margin-bottom: 1.7em;
+}
+
+#main .section .body .content .summary {
+	background-color: #2C2820;
+	margin-bottom: 1.8em;
+	border: 4px double #666;
+	padding-top: 15px;
+	padding-right: 15px;
+	padding-bottom: 0px;
+	padding-left: 15px;
+}
+#main .section .body .content .summary h4:before {
+	content:none;
+	margin-right:0em;
+}
+#main .section .body .content .summary h4 {
+	line-height: 1.4;
+	margin-bottom: 0.8em;
+	font-size: 18px;
+	background-image: url(../images/section_under_border.gif);
+	background-repeat: repeat-x;
+	background-position: left bottom;
+	display: block;
+	padding-bottom: 3px;
+}
+#main .section .body .content dt:before {
+	content:"\0025a0";
+	margin-right:0.2em;
+}
+#main .section .body .content dt {
+	line-height: 1.4;
+	margin-bottom: 1em;
+	font-size: 16px;
+	display: block;
+	text-shadow: 1px 1px 1px #2C2820;
+}
+#main .section .body .content dd {
 	line-height: 1.7;
 	margin-bottom: 1.7em;
 }
