@@ -441,7 +441,6 @@ site-design
 	clear: both;
 	color: #FFF6E5;
 	font-size: 14px;
-	margin-top: -1px;
 }
 #main .section .body .author {
 	background-image: url(../images/section-body-author.gif);
@@ -592,6 +591,9 @@ site-design
 	padding-bottom: 0px;
 	padding-left: 15px;
 }
+#main .section .body .content .summary ul {
+	margin-bottom: 0.6em;
+}
 #main .section .body .content .summary h4:before {
 	content:none;
 	margin-right:0em;
@@ -629,10 +631,13 @@ site-design
 	margin-bottom: 1.7em;
 	font-size: 13px;
 	display: block;
-	padding: 5px;
 	color: #0C3;
 	background-color: #000;
 	overflow: auto;
+	padding-top: 5px;
+	padding-right: 8px;
+	padding-bottom: 5px;
+	padding-left: 8px;
 }
 #main .section .body .content img {
 	max-width:500px;
