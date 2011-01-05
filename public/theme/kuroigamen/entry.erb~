@@ -39,9 +39,7 @@
 <% if @entry.class == Post %>
 <ul class="buttons">	
 <li><%= tweet_button %></li>
-<!--
 <li class="hatena"><%= hatena_bookmark_button(@entry.title) %></li>
--->	
 <li><%= mixi_check %></li>
 <li><%= gree_social_feedback %></li>
 </ul>
