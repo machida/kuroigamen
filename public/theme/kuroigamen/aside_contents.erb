@@ -1,12 +1,12 @@
 <div class="new_entries section">
 <h2>最新のブログ記事</h2>
 <ul>
-<% Post.recent(5).each do |post| %>
+<% Post.recent(10).each do |post| %>
 <li class="clearfix">
 <a href="<%= post.link %>" class="clearfix"><span class="title"><%= post.title %><span class="date"><%= l post.created_at %></span></span>
 <span class="auther"><img src="<%= gravatar_image_url(post.user.email) %>"/><br /><%= post.user.name %></span>
 <span class="date"></span></a>
-</li>
+<a href="http://b.hatena.ne.jp/entry/http://kuroigamen.com<%= post.link %>" target="_blank"><img src="http://b.hatena.ne.jp/entry/image/small/http://kuroigamen.com<%= post.link %>"></a></li>
 <% end %>
 </ul>
 </div>
