@@ -722,6 +722,24 @@ site-design
 	margin-bottom: 0px;
 	padding-top: 0px;
 	}
+#main .section .body .content .point h3.long {
+	background-color:#4d493e;
+	background-image: url(../images/point_title_long.png);
+	background-repeat: no-repeat;
+	background-position: left top;
+	height: 30px;
+	width: 245px;
+	font-size: 12px;
+	padding-left: 50px;
+	text-align: center;
+	padding-bottom: 25px;
+	line-height: 30px;
+	padding-right: 15px;
+	float: left;
+	margin-bottom: 0px;
+	padding-top: 5px;
+	margin-right: 10px;
+	}
 #main .section .body .content .work h3 {
 	background-image: none;
 	}
