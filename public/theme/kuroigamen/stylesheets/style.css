@@ -843,6 +843,37 @@ site-design
 	text-align: center;
 }
 
+
+
+#aside div.banners ul {
+	margin-top: 8px;
+}
+#aside div.banners li {
+	display: block;
+	margin-bottom: 8px;
+}
+#aside div.banners li a {
+	display: block;
+	border-top-width: 5px;
+	border-right-width: 5px;
+	border-bottom-width: 5px;
+	border-left-width: 5px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+}
+#aside div.banners li a:link,
+#aside div.banners li a:visited {
+    border: 5px solid #FFF6E5;
+	}
+#aside div.banners li a:hover,
+#aside div.banners li a:active {
+    border: 5px solid #B49247;
+	}
+
+
+
 #twtr-widget-1 h3 {
 	font-size:16px;
 	font-weight: bold;
