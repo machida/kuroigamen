@@ -1113,6 +1113,7 @@ margin-left:45px !important;
 	display: inline;
 	font-size: 12px;
 	line-height: 20px;
+	text-shadow:none;
 }
 .works #main .section .body .author img {
 	height: 12px;
