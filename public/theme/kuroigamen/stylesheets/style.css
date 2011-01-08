@@ -757,6 +757,7 @@ site-design
 #main .section .body .content .tags li {
 	line-height: 30px;
 	display: inline;
+	margin-right: 10px;
 }
 #main .section .footer {
 	background-image: url(../images/section-footer.gif);
