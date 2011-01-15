@@ -550,6 +550,23 @@ site-design
 	-webkit-border-radius: 8px;
 	-moz-border-radius: 8px;
 }
+#aside .amazon li {
+	text-align: center;
+	display: block;
+	background-color: #2C2820;
+	padding-top: 10px;
+	padding-bottom: 15px;
+	box-shadow: inset 2px 2px 2px #1e1d19;
+	-webkit-box-shadow: inset 2px 2px 2px #1e1d19;
+	-moz-box-shadow: inset 2px 2px 2px #1e1d19;
+	margin-top: 15px;
+	background-image: url(../images/amazon.png);
+	background-repeat: no-repeat;
+	background-position: left center;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+}
 #main .section .body .content .buttons {
 	background-color: #2B2822;
 	margin-top: -15px;
@@ -642,6 +659,11 @@ site-design
 #main .section .body .content img {
 	max-width:500px;
 	max-height:500px;
+	width: expression(
+      (document.documentElement.clientWidth > 502)? "500px" :
+            "auto"
+   );
+   height: 1%;
 }
 #main .section .body .content li img {
 	max-width:480px;
@@ -791,13 +813,19 @@ site-design
 	font-weight: bold;
 	display: block;
 	color:#9F7932;
-	background-image: url(../images/aside_h2.gif) ;
-	height: 38px ;
-	padding-bottom: 22px ;
-	line-height: 38px ;
-	padding-left: 15px ;
-	color: #FFF6E5 ;
+	background-image: url(../images/aside_h2.gif);
+	height: 38px;
+	padding-bottom: 20px;
+	line-height: 38px;
+	padding-left: 15px;
+	color: #FFF6E5;
 	text-shadow:#966 1px 1px 1px;
+	padding-top: 2px;
+}
+#aside h3 span.hashtag {
+	font-size:12px;
+	font-weight: bold;
+	margin-left: 8px;
 }
 #aside div.works ul {
 	margin-top: 8px;
@@ -881,11 +909,12 @@ site-design
 	color:#9F7932;
 	background-image: url(../images/aside_h2.gif) !important;
 	height: 38px !important;
-	padding-bottom: 22px !important;
+	padding-bottom: 20px !important;
 	line-height: 38px !important;
 	padding-left: 15px !important;
 	color: #FFF6E5 !important;
 	text-shadow:#966 1px 1px 1px;
+	padding-top: 2px !important;
 }
 
 
