@@ -51,7 +51,7 @@ Hatena.Star.SiteConfig = {
 <div class="inner">
 <div class="title">
 <p class="logo"><a href="/" class="image_link"><%= @site.title %></a></p>
-<p class="sub-title">デザイナーもfolkしたりpull request送ったり</p>
+<p class="sub-title">デザイナーもforkしたりpull request送ったり</p>
 </div>
 <div class="nav">
 <p class="description">我々はオープンソースにデザインを送り付けるデザイナー集団です。</p>
