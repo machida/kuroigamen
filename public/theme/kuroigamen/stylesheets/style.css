@@ -663,8 +663,7 @@ site-design
       (document.documentElement.clientWidth > 502)? "500px" :
             "auto"
    );
-   height: 1%;
-}
+ }
 #main .section .body .content li img {
 	max-width:480px;
 }
