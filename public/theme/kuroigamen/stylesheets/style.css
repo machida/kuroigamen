@@ -517,7 +517,7 @@ site-design
 	font-weight: bold;
 	color: #0C6;
 	}
-#main .section .body .content p.image {
+#main .section .body .content .image {
 	text-align: center;
 	display: block;
 }
