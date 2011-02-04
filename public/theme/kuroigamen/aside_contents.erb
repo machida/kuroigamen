@@ -11,6 +11,15 @@
 </ul>
 </div>
 
+<div class="tags">
+<h2>最新のブログ記事</h2>
+<ul>
+<% Tag.all.each do |tag| %>
+<li><a href="<%= tag.link %>"><%= tag.name %></a></li>
+<% end %>
+</ul>
+</div>
+
 <div class="works section">
 <h2>最新の実績</h2>
 <ul>

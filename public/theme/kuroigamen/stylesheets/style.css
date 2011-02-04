@@ -702,6 +702,7 @@ site-design
 	display: block;
 	padding-bottom: 3px;
 	padding-top: 10px;
+	font-weight: bold;
 }
 #main .section .body .content h4:before {
 	content:"\0025a0";
@@ -1294,4 +1295,33 @@ margin-left:45px !important;
 #main ul.pager li.active a:active {
 	background-color: #caa770;
 	color: #FFF;
+}
+#aside .tags ul {
+	padding-bottom: 15px;
+	padding-top: 5px;
+}
+#aside .tags li {
+	display: inline;
+}
+#aside .tags li a {
+	display: block;
+	line-height: 1.4;
+	margin-bottom: 12px;
+	white-space: nowrap;
+	font-size: 13px;
+	margin-right: 10px;
+	text-decoration: none;
+	float: left;
+	text-shadow:#f2e2c3 1px 1px 0px;
+	font-weight: bold;
+}
+#aside .tags li a:link,
+#aside .tags li a:visited {
+	color:#49320b;
+	text-shadow:#f2e2c3 1px 1px 0px;
+}
+#aside .tags li a:hover,
+#aside .tags li a:active {
+	color:#F36;
+	text-shadow:none;
 }

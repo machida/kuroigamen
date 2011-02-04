@@ -97,10 +97,17 @@ Hatena.Star.SiteConfig = {
 </div>
 
 <%# [条件分岐] カテゴリーのとき %>
-<% elsif entries? %>
+<% elsif category? %>
 <div class="title">
 <h1><%= @category.slug %></h1>
 <p class="description"><%= @category.description %></p>
+</div>
+
+<%# [条件分岐] タグのとき %>
+<% elsif tag? %>
+<div class="title">
+<h1><%= @tag.name %></h1>
+<p class="description">タグが付いた記事の一覧</p>
 </div>
 
 <%# [条件分岐] それ以外 %>
