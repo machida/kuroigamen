@@ -4,15 +4,11 @@ module Lokka
 
     alias :h :escape_html
 
-    def index?;     @theme_types.include?(:index); end
-    def search?;    @theme_types.include?(:search); end
-    def category?;  @theme_types.include?(:category); end
-    def tag?;       @theme_types.include?(:tag); end
-    def yearly?;    @theme_types.include?(:yearly); end
-    def monthly?;   @theme_types.include?(:monthly); end
-    def daily?;     @theme_types.include?(:daily); end
-    def entry?;     @theme_types.include?(:entry); end
-    def entries?;   @theme_types.include?(:entries); end
+    %w[index search category tag yearly monthly daily post page entry entries].each do |name|
+      define_method("#{name}?") do
+        @theme_types.include?(name.to_sym)
+      end
+    end
 
     # h + n2br
     def hbr(str)
@@ -107,11 +103,16 @@ module Lokka
 
     def rendering(ext, name, options = {})
       locals = options[:locals] ? {:locals => options[:locals]} : {}
-      dir = request.path_info =~ %r{^/admin/.*} ? 'admin' : "theme/#{@theme.name}"
+      dir =
+        if request.path_info =~ %r{^/admin/.*}
+          'admin'
+        elsif request.path_info =~ %r{^/install/.*}
+          'install'
+        else
+          "theme/#{@theme.name}"
+        end
       layout = "#{dir}/layout"
       path = "#{dir}/#{name}"
-
-      puts "ext, name, theme, dir, file: #{ext}, #{name}, #{@theme.name}, #{dir}, #{settings.views}/#{path}.#{ext}"
 
       if File.exist?("#{settings.views}/#{layout}.#{ext}")
         options[:layout] = layout.to_sym if options[:layout].nil?
@@ -123,14 +124,6 @@ module Lokka
 
     def comment_form
       haml :'system/comments/form', :layout => false
-    end
-
-    def link_to_if(cond, name, url, options = {})
-      cond ? link_to(name, url, options) : name
-    end
-
-    def link_to_unless(cond, name, url, options = {})
-      link_to_if !cond, name, url, options
     end
 
     def link_to(name, url, options = {})
@@ -146,10 +139,26 @@ module Lokka
 
       str = ''
       attrs.each do |key, value|
-        str += %Q(#{key.to_s}="#{value}")
+        str += %Q( #{key.to_s}="#{value}")
       end
 
-      %Q(<a #{str}>#{name}</a>)
+      %Q(<a#{str}>#{name}</a>)
+    end
+
+    def link_to_if(cond, name, url, options = {})
+      cond ? link_to(name, url, options) : name
+    end
+
+    def link_to_unless(cond, name, url, options = {})
+      link_to_if !cond, name, url, options
+    end
+
+    def link_to_current(name, url, options = {})
+      request_path == url ? link_to(name, url, options) : name
+    end
+
+    def link_to_unless_current(name, url, options = {})
+      request_path != url ? link_to(name, url, options) : name
     end
 
     def select_field(object, method, values = [], options = {})
@@ -171,8 +180,8 @@ module Lokka
 
     def truncate(text, options = {})
       options = {:length => 30, :ommision => '...'}.merge(options)
-      if options[:length] < text.length
-        text[0..options[:length]] + options[:ommision]
+      if options[:length] < text.split(//u).size
+        text.split(//u)[0, options[:length]].to_s + options[:ommision]
       else
         text
       end
@@ -210,5 +219,14 @@ module Lokka
       s = yield_content :footer
       s unless s.blank?
     end
+
+    # example: /foo/bar?buz=aaa
+    def request_path
+      path = '/' + request.url.split('/')[3..-1].join('/')
+      path += '/' if path != '/' and request.url =~ /\/$/
+      path
+    end
+
+    def locale; r18n.locale.code end
   end
 end

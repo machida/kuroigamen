@@ -1,4 +1,3 @@
-# coding: utf-8
 class Entry
   include DataMapper::Resource
 
@@ -30,6 +29,10 @@ class Entry
 
   def comments
     @comment = Comment.all(:status => Comment::APPROVED, :entry_id => self.id)
+  end
+
+  def recent(count = 5)
+    all(:limit => count, :order => [:created_at.desc])
   end
 
   def tag_collection=(string)
@@ -74,5 +77,18 @@ class Entry
   end
 end
 
+def Entry(id_or_slug)
+  Entry.get_by_fuzzy_slug(id_or_slug.to_s)
+end
+
 class Post < Entry; end
+
+def Post(id_or_slug)
+  Post.get_by_fuzzy_slug(id_or_slug.to_s)
+end
+
 class Page < Entry; end
+
+def Page(id_or_slug)
+  Page.get_by_fuzzy_slug(id_or_slug.to_s)
+end

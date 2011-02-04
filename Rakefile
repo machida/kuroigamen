@@ -79,38 +79,46 @@ require './init'
 
 desc 'Prepare test'
 task 'test:prepare' => 'db:migrate' do
-  User.create(:name => 'test', :password => 'test', :password_confirmation => 'test')
-  Site.create(:title => 'Test Site', :description => 'description...', :theme => 'jarvi')
-  Post.create(
-    :id          => 1,
-    :user_id     => 1,
-    :category_id => 1,
-    :title       => "Test Post ...",
-    :body        => "body ...",
-    :slug        => "slug"
-  )
+  Lokka::Database.new.connect.seed
 end
 
-desc 'Create the Lokka database'
+desc 'Migrate the Lokka database'
 task 'db:migrate' do
-  Lokka::Database.new.upgrade
+  puts 'Upgrading Database...'
+  Lokka::Database.new.connect.migrate
 end
 
 desc 'Execute seed script'
 task 'db:seed' do
-  Lokka::Database.new.insert_seeds
+  puts 'Initializing Database...'
+  DataMapper::Logger.new(STDOUT, :debug)
+  DataMapper.logger.set_log STDERR, :debug, "SQL: ", true
+  Lokka::Database.new.connect.seed
 end
+
+desc 'Delete database'
+task 'db:delete' do
+  puts 'Delete Database...'
+  Lokka::Database.new.connect.migrate!
+end
+
+desc 'Reset database'
+task 'db:reset' => %w(db:delete db:seed)
 
 desc 'Set database'
 task 'db:set' => %w(db:migrate db:seed)
 
-desc 'Reset database'
-task 'db:reset' => %w(db:migrate db:seed)
-
 desc 'Install gems'
 task :bundle do
-  `bundle install --path bundle --without production test`
+  `bundle install --path vendor/bundle --without production test`
 end
 
 desc 'Install'
 task :install => %w(bundle db:set)
+
+task 'package:mac' do
+  puts ENV['MY_RUBY_HOME']
+  system "cp -r #{ENV['MY_RUBY_HOME']} vendor/ruby"
+  puts ENV['GEM_HOME']
+  system "cp -r #{ENV['GEM_HOME']} vendor/gem"
+end

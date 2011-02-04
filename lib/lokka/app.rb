@@ -40,29 +40,20 @@ module Lokka
       set :public => Proc.new { File.join(root, 'public') }
       set :views => Proc.new { public }
       set :theme => Proc.new { File.join(public, 'theme') }
-      set :config => YAML.load(ERB.new(File.read("#{root}/config.yml")).result(binding))
-      set :supported_templates => %w(erb haml erubis)
+      set :supported_templates => %w(erb haml slim erubis)
       set :per_page, 10
-      set :admin_per_page, 50
+      set :admin_per_page, 200
       set :default_locale, 'en'
       set :haml, :ugly => false, :attr_wrapper => '"'
       register Sinatra::R18n
       register Lokka::Before
       helpers Sinatra::ContentFor
       helpers Lokka::Helpers
+      use Rack::Session::Cookie,
+        :expire_after => 60 * 60 * 24 * 12
       use Rack::Flash
-      use Rack::Exceptional, ENV['EXCEPTIONAL_API_KEY'] || 'key' if ENV['RACK_ENV'] == 'production'
-
       load_plugin
-    end
-
-    configure :production do
-      DataMapper.setup(:default, ENV['DATABASE_URL'] || config['production']['dsn'])
-    end
-
-    configure :development do
-      DataMapper::Logger.new('log/datamapper.log', :debug)
-      DataMapper.setup(:default, config['development']['dsn'])
+      Lokka::Database.new.connect
     end
 
     get '/admin/' do
@@ -359,6 +350,51 @@ module Lokka
       flash[:notice] = t.user_was_successfully_deleted
       redirect '/admin/users'
     end
+
+    # snippets
+    get '/admin/snippets' do
+      @snippets = Snippet.all(:order => :created_at.desc).
+                        page(params[:page], :per_page => settings.admin_per_page)
+      render_any :'snippets/index'
+    end
+
+    get '/admin/snippets/new' do
+      @snippet = Snippet.new(
+        :created_at => DateTime.now,
+        :updated_at => DateTime.now)
+      render_any :'snippets/new'
+    end
+
+    post '/admin/snippets' do
+      @snippet = Snippet.new(params['snippet'])
+      if @snippet.save
+        flash[:notice] = t.snippet_was_successfully_created
+        redirect '/admin/snippets'
+      else
+        render_any :'snippets/new'
+      end
+    end
+
+    get '/admin/snippets/:id/edit' do |id|
+      @snippet = Snippet.get(id)
+      render_any :'snippets/edit'
+    end
+
+    put '/admin/snippets/:id' do |id|
+      @snippet = Snippet.get(id)
+      if @snippet.update(params['snippet'])
+        flash[:notice] = t.snippet_was_successfully_updated
+        redirect '/admin/snippets'
+      else
+        render_any :'snippets/edit'
+      end
+    end
+
+    delete '/admin/snippets/:id' do |id|
+      Snippet.get(id).destroy
+      flash[:notice] = t.snippet_was_successfully_deleted
+      redirect '/admin/snippets'
+    end
  
     # theme
     get '/admin/themes' do
@@ -407,7 +443,7 @@ module Lokka
       @posts = Post.page(params[:page], :per_page => settings.per_page)
 
       @bread_crumbs = BreadCrumb.new
-      @bread_crumbs.add('Home', '/')
+      @bread_crumbs.add(t.home, '/')
 
       render_detect :index, :entries
     end
@@ -430,7 +466,7 @@ module Lokka
       @title = "Search by #{@query} - #{@site.title}"
 
       @bread_crumbs = BreadCrumb.new
-      @bread_crumbs.add('Home', '/')
+      @bread_crumbs.add(t.home, '/')
       @bread_crumbs.add(@query)
 
       render_detect :search, :entries
@@ -450,7 +486,7 @@ module Lokka
       @title = "#{@category.title} - #{@site.title}"
 
       @bread_crumbs = BreadCrumb.new
-      @bread_crumbs.add('Home', '/')
+      @bread_crumbs.add(t.home, '/')
       @category.ancestors.each do |cat|
         @bread_crumbs.add(cat.name, cat.link)
       end
@@ -471,7 +507,7 @@ module Lokka
       @title = "#{@tag.name} - #{@site.title}"
 
       @bread_crumbs = BreadCrumb.new
-      @bread_crumbs.add('Home', '/')
+      @bread_crumbs.add(t.home, '/')
       @bread_crumbs.add(@tag.name, @tag.link)
 
       render_detect :tag, :entries
@@ -490,7 +526,7 @@ module Lokka
       @title = "#{year}/#{month} - #{@site.title}"
 
       @bread_crumbs = BreadCrumb.new
-      @bread_crumbs.add('Home', '/')
+      @bread_crumbs.add(t.home, '/')
       @bread_crumbs.add("#{year}", "/#{year}/")
       @bread_crumbs.add("#{year}/#{month}", "/#{year}/#{month}/")
 
@@ -510,7 +546,7 @@ module Lokka
       @title = "#{year} - #{@site.title}"
 
       @bread_crumbs = BreadCrumb.new
-      @bread_crumbs.add('Home', '/')
+      @bread_crumbs.add(t.home, '/')
       @bread_crumbs.add("#{year}", "/#{year}/")
 
       render_detect :yearly, :entries
@@ -523,10 +559,14 @@ module Lokka
       @entry = Entry.get_by_fuzzy_slug(id_or_slug)
       return 404 if @entry.blank?
 
+      type = @entry.class.name.downcase.to_sym
+      @theme_types << type
+      eval "@#{type} = @entry"
+
       @title = "#{@entry.title} - #{@site.title}"
 
       @bread_crumbs = BreadCrumb.new
-      @bread_crumbs.add('Home', '/')
+      @bread_crumbs.add(t.home, '/')
       if @entry.category
         @entry.category.ancestors.each do |cat|
           @bread_crumbs.add(cat.name, cat.link)
@@ -535,7 +575,7 @@ module Lokka
       end
       @bread_crumbs.add(@entry.title, @entry.link)
 
-      render_any :entry
+      render_detect type, :entry
     end
 
     # comment
@@ -544,6 +584,7 @@ module Lokka
 
       @entry = Entry.get_by_fuzzy_slug(id_or_slug)
       return 404 if @entry.blank?
+      return 404 if params[:check] != 'check'
 
       @comment = @entry.comments.new(params['comment'])
 

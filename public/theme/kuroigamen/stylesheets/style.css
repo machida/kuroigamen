@@ -243,7 +243,7 @@ site-design
 	height: 180px;
 	padding-top: 8px;
 	font-family: "Lucida Sans Unicode","Lucida Grande",Arial,Helvetica,"ヒラギノ丸ゴ Pro W4",HiraMaruPro-W4,"ヒラギノ角ゴ Pro W3",HiraKakuPro-W3,Osaka,sans-serif;
-	text-shadow:#000 1px 1px 1px;
+	text-shadow:#000 1px 1px 0px;
 }
 .index #header .body .summary span.button {
 	display: block;
@@ -263,7 +263,7 @@ site-design
 .index #header .body .summary span.button a:link,
 .index #header .body .summary span.button a:visited
  {
-	text-shadow:#033 1px 1px 1px;
+	text-shadow:#033 1px 1px 0px;
 	color: #FFF6E5;
 }
 .index #header .body .summary span.button a:hover,
@@ -635,6 +635,7 @@ site-design
 	font-size: 16px;
 	display: block;
 	text-shadow: 1px 1px 1px #2C2820;
+	font-weight: bold;
 }
 #main .section .body .content dd {
 	line-height: 1.7;
@@ -712,6 +713,7 @@ site-design
 	font-size: 16px;
 	display: block;
 	text-shadow: 1px 1px 1px #2C2820;
+	font-weight: bold;
 }
 #main .section .body .content .point {
 	background-color:#4d493e;
@@ -818,7 +820,7 @@ site-design
 	line-height: 38px;
 	padding-left: 15px;
 	color: #FFF6E5;
-	text-shadow:#966 1px 1px 1px;
+	text-shadow:#966 1px 1px 0px;
 	padding-top: 2px;
 }
 #aside h3 span.hashtag {
@@ -912,7 +914,7 @@ site-design
 	line-height: 38px !important;
 	padding-left: 15px !important;
 	color: #FFF6E5 !important;
-	text-shadow:#966 1px 1px 1px;
+	text-shadow:#966 1px 1px 0px;
 	padding-top: 2px !important;
 }
 
