@@ -1328,8 +1328,7 @@ margin-left:45px !important;
 	color:#F36;
 	text-shadow:none;
 }
-.zenback {
-	margin-left:-10px !important;
-	margin-right:-10px; !important}
-.zenback-socialbar-twitter-count-element {
-	float:left !important;}
+.dsq-trackback-url {
+	margin-left:15px !important;
+	width: 385px !important;
+	}
