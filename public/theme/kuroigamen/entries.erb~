@@ -1,16 +1,10 @@
-<% @posts.each do |post| %>
-	
-	
+<%= @posts.pager.to_html(request.url) %>
+<% @posts.each do |post| %>	
 <div class="article section">
 <div class="header">
 <h2 class="title"><a href="<%= post.link %>"><%= post.title %></a></h2>
-
 <p class="pubdate"><span class="mounth"><%=  post.created_at.month %>月</span><span class="day"><%=post.created_at.day %>日</span><span class="year"><%= post.created_at.year %></span></p>
-
-
-
 </div>
-
 <div class="body">
 <dl class="author">
 <dt>この記事を書いた人</dt>
@@ -46,10 +40,5 @@
 <% end %>    
 </div>
 </div>	
-
-	
-	
-
 <% end %>
-
 <%= @posts.pager.to_html(request.url) %>

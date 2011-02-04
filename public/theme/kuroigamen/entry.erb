@@ -54,7 +54,7 @@
 
 <%# [条件分岐] 投稿のとき %>
 <% if @entry.class == Post %>
-<%= partial :comments %>
+<%= comment_form %>
 <% end %>
 
 </div>
