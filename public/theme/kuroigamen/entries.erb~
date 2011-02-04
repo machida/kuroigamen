@@ -15,13 +15,6 @@
 <dl class="author">
 <dt>この記事を書いた人</dt>
 <dd><%= post.user.name %> <img src="<%= gravatar_image_url(post.user.email) %>"/></dd>
-
-<%# [条件分岐] ページのとき %>
-<% if @entry.class == Page %>
-<dt>この記事の最終更新日</dt>
-<dd><%= post.user.name %> <img src="<%= gravatar_image_url(post.user.email) %>"/></dd>
-<% end %>
-
 </dl>
 <div class="content">
 <%= post.body %>
@@ -33,6 +26,21 @@
 	
 	
 <div class="footer">
+	
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: edit before pasting into your webpage * * */
+    var disqus_shortname = 'kuroigamen'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+
 <% if logged_in? %>
 <p><a href="<%= post.edit_link %>"><%= t.edit %></a></p>
 <% end %>    
@@ -43,13 +51,5 @@
 	
 
 <% end %>
-<div class="pager">
-  <ul>
-<% if @posts.pager.previous_page %>
-    <li class="previous"><a href="?page=<%= @posts.pager.previous_page %>"><%= t.newer %></a></li>
-<% end %>
-<% if @posts.pager.next_page %>
-    <li class="next"><a href="?page=<%= @posts.pager.next_page %>"><%= t.older %></a></li>
-<% end %>
-  </ul>
-</div>
+
+<%= @posts.pager.to_html(request.url) %>

@@ -201,7 +201,7 @@ site-design
 	float: left;
 	height: 25px;
 	padding-top: 15px;
-	font-size: 13px;
+	font-size: 16px;
   }
 
 .index #header .body .cattle-mutilation {
@@ -319,6 +319,7 @@ site-design
 
 #main .section {
 	margin-bottom: 30px;
+	clear: both;
 }
 #main .section .header {
 	width: 590px;
@@ -500,7 +501,6 @@ site-design
 	padding-bottom: 0px;
 	padding-left: 20px;
 	background-color: #2C2820;
-	color:#fff;
 	box-shadow: inset 2px 2px 2px #1e1d19;
 	-webkit-box-shadow: inset 2px 2px 2px #1e1d19;
 	-moz-box-shadow: inset 2px 2px 2px #1e1d19;
@@ -1227,3 +1227,71 @@ margin-left:45px !important;
 	}
 	
 	
+#main ul.pager {
+	display: block;
+	padding-bottom: 10px;
+	margin-top: -5px;
+}
+#main ul.pager li {
+	display: block;
+	font-size: 13px;
+	float: left;
+	margin-right: 4px;
+}
+#main ul.pager li a {
+	display: block;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	width: 3em;
+	text-decoration:none;
+	font-weight: bold;
+}
+#main ul.pager li a:link,
+#main ul.pager li a:visited {
+	background-color: #c3a169;
+	color: #FFF;
+	text-shadow:#946e31 -1px -1px 0px;
+}
+#main ul.pager li a:hover,
+#main ul.pager li a:active {
+	background-color: #caa770;
+	color: #FFF;
+}
+#main ul.pager li.jump {
+	margin-right: 4px;
+	margin-left: 4px;
+	text-shadow:#d4b481 -1px -1px 0px;
+}
+#main ul.pager li.jump a {
+	display: inline;
+	width: auto;
+	background-color: transparent;
+	text-decoration: none;
+	margin-right: 4px;
+	margin-left: 4px;
+	text-shadow:#d4b481 -1px -1px 0px;
+	font-weight: bold;
+}
+#main ul.pager li.jump a:link,
+#main ul.pager li.jump a:visited {
+	color: #2891B7;
+}
+#main ul.pager li.jump a:hover,
+#main ul.pager li.jump a:active {
+	color: #ff5252;
+}
+#main ul.pager li.active a:link,
+#main ul.pager li.active a:visited {
+	background-color: #9e7b43;
+	color: #FFF;
+	text-shadow:#946e31 -1px -1px 0px;
+	font-weight: bold;
+}
+#main ul.pager li.active a:hover,
+#main ul.pager li.active a:active {
+	background-color: #caa770;
+	color: #FFF;
+}
