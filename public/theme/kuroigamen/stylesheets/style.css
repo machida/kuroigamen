@@ -375,6 +375,7 @@ site-design
 	color: #1eff00;
 	font-weight: bold;
 	text-shadow:#000 1px 1px 0px;
+	letter-spacing: 0.2ex;
 }
 #main .section .header_page {
 	background-image: url(../images/section-header_page.gif);
@@ -703,6 +704,7 @@ site-design
 	padding-bottom: 3px;
 	padding-top: 10px;
 	font-weight: bold;
+	letter-spacing: 0.2ex;
 }
 #main .section .body .content h4:before {
 	content:"\0025a0";
@@ -823,6 +825,7 @@ site-design
 	color: #FFF6E5;
 	text-shadow:#966 1px 1px 0px;
 	padding-top: 2px;
+	letter-spacing: 0.2ex;
 }
 #aside h3 span.hashtag {
 	font-size:12px;
