@@ -349,7 +349,7 @@ site-design
 #main .section .header .pubdate span {
 	display: block;
 	line-height: 1;
-	text-shadow:#fff -1px -1px 1px;
+	text-shadow:#fff 1px 1px 0px;
 }
 #main .section .header .pubdate span.mounth {
 	line-height: 13px;
