@@ -1,4 +1,5 @@
 - content_for :head_last do
+<<<<<<< HEAD
   %link{:rel => 'stylesheet', :href => '/plugin/lokka-google_analytics/views/style.css', :type => 'text/css'}
 %h2 Google Analytics
 %form{:action => '/admin/plugins/google_analytics', :method => 'post'}
@@ -11,5 +12,16 @@
     %label{:for => 'dn_title'} Domain Name (Optional)
     %br
     %input{:type => 'text', :id => 'dn_title', :name => 'tracker_dn', :value => Option.tracker_dn}
+=======
+  %link{:rel => 'stylesheet', :href => '/plugin/lokka-disqus/views/style.css', :type => 'text/css'}
+%h2 Disqus
+%form{:action => '/admin/plugins/disqus', :method => 'post'}
+  %input{:type => 'hidden', :name => '_method', :value => 'put'}
+  .field
+    %label{:for => 'disqus_shortname'} Disqus shortname
+    %br
+    %input{:type => 'text', :id => 'disqus_shortname', :name => 'disqus_shortname',
+          :value => Option.disqus_shortname}
+>>>>>>> 8e109f8f62b5f8df980bcecc72be37b29e4ce756
   .field
     %input{:type => 'submit', :value => t.edit}
