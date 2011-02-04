@@ -1221,3 +1221,7 @@ margin-left:45px !important;
 .works #main .section .body .content dl.author dd {
 	display: inline;
 }
+
+#fb-root {
+	display:none !important;
+	}
