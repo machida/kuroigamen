@@ -705,6 +705,7 @@ site-design
 	padding-top: 10px;
 	font-weight: bold;
 	letter-spacing: 0.2ex;
+	text-shadow:#333 1px 1px 0px;
 }
 #main .section .body .content h4:before {
 	content:"\0025a0";
