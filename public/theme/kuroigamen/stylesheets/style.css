@@ -1199,24 +1199,29 @@ margin-left:45px !important;
 	border: 5px solid #b49247;
 }
 .works #main .section .body .content p.name {
-	display: block;
-	font-weight: bold;
-	margin-bottom: 0px;
-	font-size: 16px;
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-size: 16px;
 }
 .works #main .section .body .content p.name span.created {
-	font-size: 12px;
-	margin-left: 1em;
+  font-size: 12px;
+  display: block;
 }
-.works #main .section .body .content p.name a {
+.works #main .section .body .content p.name a,
+.works #main .section .body .content author a {
 	text-decoration: none;
 }
 .works #main .section .body .content p.name a:link,
-.works #main .section .body .content p.name a:visited {
+.works #main .section .body .content p.name a:visited,
+.works #main .section .body .content author a:link,
+.works #main .section .body .content author a:visited {
 	color: #302D24;
 }
 .works #main .section .body .content p.name a:hover,
-.works #main .section .body .content p.name a:active {
+.works #main .section .body .content p.name a:active,
+.works #main .section .body .content author a:hover,
+.works #main .section .body .content author a:active {
 	color: #ff5297;
 }
 .works #main .section .body .content dl.author {
