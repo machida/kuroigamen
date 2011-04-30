@@ -599,7 +599,7 @@ site-design
 	width: 40px
 }
 #main .section .body .content .buttons li.gree iframe {
-	width: 30px !important
+	width: 40px !important
 }
 #main .section .body .content .buttons li.fb {
 	padding-top: 1px !important;
@@ -677,6 +677,7 @@ site-design
       (document.documentElement.clientWidth > 502)? "500px" :
             "auto"
    );
+   height: auto
  }
 #main .section .body .content li img {
 	max-width:480px;
@@ -1350,3 +1351,7 @@ margin-left:45px !important;
 	margin-left:15px !important;
 	width: 300px !important;
 	}
+.dsq-request-user-avatar {
+width: 48px !important;
+height: 48px !important;
+}
