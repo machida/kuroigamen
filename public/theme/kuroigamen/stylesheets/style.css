@@ -595,6 +595,19 @@ site-design
 #main .section .body .content .buttons li {
 	display:inline
 }
+#main .section .body .content .buttons li iframe {
+	width: 40px
+}
+#main .section .body .content .buttons li.gree iframe {
+	width: 30px !important
+}
+#main .section .body .content .buttons li.fb {
+	padding-top: 1px !important;
+}
+#main .section .body .content .buttons li.fb iframe {
+	width: 110px !important;
+	margin-left: -7px;
+}
 #main .section .body .content p {
 	line-height: 1.7;
 	margin-bottom: 1.7em;
@@ -660,7 +673,6 @@ site-design
 }
 #main .section .body .content img {
 	max-width:500px;
-	max-height:500px;
 	width: expression(
       (document.documentElement.clientWidth > 502)? "500px" :
             "auto"
