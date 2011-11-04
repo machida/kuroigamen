@@ -14,7 +14,7 @@
         <% unless post.tags.size.zero? %>
         <li class="tags"><%= post.tags_to_html %></li>
         <% end %>
-        <li class="auther"><%= post.user.name %></li>
+        <li class="author"><%= post.user.name %></li>
       </ul>
     </div>
     <div class="body">
@@ -22,7 +22,7 @@
     </div>
     <div class="footer">
       <% if logged_in? %>
-      <p><a href="<%= post.edit_link %>"><%= t.edit %></a></p>
+      <p><a href="<%= post.edit_link %>"><%= t('edit') %></a></p>
       <% end %>
     </div>
   </div>

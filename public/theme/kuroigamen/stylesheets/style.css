@@ -732,6 +732,14 @@ site-design
 	text-shadow: 1px 1px 0px #2C2820;
 	font-weight: bold;
 }
+#main .section .body .content h5 {
+	line-height: 1.4;
+	margin-bottom: 1em;
+	font-size: 16px;
+	display: block;
+	text-shadow: 1px 1px 0px #2C2820;
+	font-weight: bold;
+}
 #main .section .body .content .point {
 	background-color:#4d493e;
 	border: 1px dotted #2C2820;

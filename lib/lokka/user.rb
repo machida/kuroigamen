@@ -1,3 +1,4 @@
+# encoding: utf-8
 class User
   include DataMapper::Resource
 
@@ -19,6 +20,10 @@ class User
   validates_length_of :password, :minimum => 4, :if => :password_require?
   validates_presence_of :password_confirmation, :if => :password_require?
   validates_confirmation_of :password
+
+  before :valid? do
+    self.name = name.strip
+  end
 
   def password=(pass)
     @password = pass
@@ -48,11 +53,7 @@ class User
   end
 
   def self.random_string(len)
-    #generate a random password consisting of strings and digits
-    chars = ("a".."z").to_a + ("A".."Z").to_a + ("0".."9").to_a
-    newpass = ""
-    1.upto(len) { |i| newpass << chars[rand(chars.size-1)] }
-    return newpass
+    Array.new(len) { ['a'..'z','A'..'Z','0'..'9'].map(&:to_a).flatten[rand(61)] }.join
   end
 end
 
